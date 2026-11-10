@@ -1,0 +1,959 @@
+.home-section {
+    padding: 52px 0;
+    color: var(--text-color, #54371f);
+}
+
+.categories-section,
+.benefits-section {
+    background: #f7f5ef;
+}
+
+.featured-section {
+    background: #efede5;
+}
+
+.section-heading {
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+.section-heading h2,
+.promotion-copy h2,
+.newsletter-copy h2 {
+    margin: 0;
+    color: var(--text-color, #54371f);
+    font-size: clamp(22px, 2.4vw, 30px);
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    margin: 7px 0 0;
+    color: var(--muted-color, #938675);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.section-eyebrow {
+    margin: 0 0 7px;
+    color: #947b5e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 170px));
+    justify-content: center;
+    gap: 10px;
+}
+
+.category-card {
+    min-width: 0;
+    min-height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 8px;
+    border: 1px solid rgba(84, 55, 31, 0.06);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.24);
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.category-card:hover,
+.category-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: #d3c4ae;
+    box-shadow: 0 12px 26px rgba(84, 55, 31, 0.08);
+}
+
+.category-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid #d8d0bf;
+    background: #efede4;
+    color: #80694e;
+}
+
+.category-icon svg {
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.category-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.category-icon-vitamins {
+    background: #e8eee7;
+    color: #718675;
+}
+
+.category-icon-care {
+    background: #f3e9e0;
+    color: #a9795b;
+}
+
+.category-icon-device {
+    background: #e7ecec;
+    color: #698584;
+}
+
+.category-icon-first-aid {
+    background: #f0e5df;
+    color: #a36d5f;
+}
+
+.category-icon-wellness {
+    background: #e9e9dc;
+    color: #788264;
+}
+
+.category-name {
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #54371f;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.category-link {
+    color: #927b60;
+    font-size: 9px;
+}
+
+.category-link span {
+    display: inline-block;
+    transition: transform 180ms ease;
+}
+
+.category-card:hover .category-link span {
+    transform: translateX(3px);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 260px));
+    justify-content: center;
+    gap: 14px;
+}
+
+.home-product-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(84, 55, 31, 0.07);
+    border-radius: 4px;
+    background: #fbfaf7;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(84, 55, 31, 0.1);
+}
+
+.product-visual {
+    height: 170px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #f7f6f2;
+    text-decoration: none;
+}
+
+.product-visual::before,
+.product-visual::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(84, 55, 31, 0.035);
+    border-radius: 50%;
+}
+
+.product-visual::before {
+    width: 175px;
+    height: 175px;
+}
+
+.product-visual::after {
+    width: 135px;
+    height: 135px;
+}
+
+.product-visual-vitamins {
+    background: #ece7da;
+}
+
+.product-visual-thermometer {
+    background: #e4e9e4;
+}
+
+.product-visual-skincare {
+    background: #eee5db;
+}
+
+.product-visual-first-aid {
+    background: #e3e9e3;
+}
+
+.product-badge {
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    left: 13px;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #715b40;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.product-art {
+    width: 78%;
+    height: 88%;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 8px 6px rgba(84, 55, 31, 0.08));
+    transition: transform 180ms ease;
+    object-fit: contain;
+}
+
+.product-visual .product-placeholder {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9e4d8;
+    color: #80694e;
+    font-size: 28px;
+}
+
+.home-product-card:hover .product-art {
+    transform: scale(1.04);
+}
+
+.product-copy {
+    padding: 12px 10px 11px;
+}
+
+.product-title-row,
+.product-buy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.product-title-row h3 {
+    overflow: hidden;
+    margin: 0;
+    color: #54371f;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-rating {
+    flex: 0 0 auto;
+    color: #9a764b;
+    font-size: 11px;
+}
+
+.product-description {
+    min-height: 30px;
+    margin: 5px 0 10px;
+    color: #938675;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.product-price {
+    color: #54371f;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.add-to-cart-button {
+    min-height: 29px;
+    padding: 0 9px;
+    border: 1px solid #6a4b31;
+    border-radius: 5px;
+    background: #6a4b31;
+    color: #fff;
+    font: inherit;
+    font-size: 9px;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.add-to-cart-button:hover {
+    transform: translateY(-1px);
+    border-color: #876847;
+    background: #876847;
+}
+
+.add-to-cart-button.is-added {
+    border-color: #657f68;
+    background: #657f68;
+}
+
+.cart-feedback {
+    min-height: 20px;
+    margin: 16px 0 0;
+    color: #657f68;
+    font-size: 12px;
+    text-align: center;
+}
+
+.section-action {
+    margin-top: 21px;
+    text-align: center;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #66482d;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.text-link span {
+    transition: transform 180ms ease;
+}
+
+.text-link:hover span {
+    transform: translateX(4px);
+}
+
+.home-promotion {
+    position: relative;
+    overflow: hidden;
+    background: #e7e3d8;
+    color: #54371f;
+}
+
+.promotion-inner {
+    min-height: 360px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 28px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.promotion-copy {
+    max-width: 480px;
+    padding: 24px 0;
+}
+
+.promotion-copy h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.13;
+}
+
+.promotion-copy > p:not(.section-eyebrow) {
+    max-width: 385px;
+    margin: 15px 0 20px;
+    color: #827662;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.promotion-button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 17px;
+    border-radius: 5px;
+    background: #59391f;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.promotion-button:hover {
+    transform: translateY(-2px);
+    background: #755033;
+}
+
+.promotion-note {
+    display: block;
+    margin-top: 12px;
+    color: #887b68;
+    font-size: 11px;
+}
+
+.promotion-note strong {
+    color: #62472d;
+    letter-spacing: 0.5px;
+}
+
+.promotion-art {
+    min-height: 285px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.promotion-art > svg {
+    width: min(100%, 390px);
+    max-height: 285px;
+    position: relative;
+    z-index: 1;
+}
+
+.promotion-sun {
+    width: 230px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: rgba(250, 247, 239, 0.55);
+    transform: translate(-50%, -50%);
+}
+
+.promotion-leaf {
+    width: 83px;
+    height: 42px;
+    position: absolute;
+    border: 1px solid rgba(133, 146, 117, 0.28);
+    border-radius: 100% 0 100% 0;
+    background: rgba(153, 167, 135, 0.24);
+}
+
+.promotion-leaf-one {
+    top: 46px;
+    right: 12%;
+    transform: rotate(27deg);
+}
+
+.promotion-leaf-two {
+    bottom: 35px;
+    left: 10%;
+    transform: rotate(-31deg);
+}
+
+.promotion-sparkle {
+    position: absolute;
+    z-index: 2;
+    color: #9c896a;
+    font-size: 20px;
+}
+
+.promotion-sparkle-one {
+    top: 34px;
+    left: 26%;
+}
+
+.promotion-sparkle-two {
+    right: 17%;
+    bottom: 36px;
+    font-size: 14px;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid rgba(84, 55, 31, 0.06);
+    border-radius: 4px;
+    background: #f9f8f4;
+}
+
+.benefit-card {
+    padding: 15px 16px;
+    border-right: 1px solid rgba(84, 55, 31, 0.07);
+    text-align: center;
+}
+
+.benefit-card:last-child {
+    border-right: 0;
+}
+
+.benefit-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #eee9dd;
+    color: #80694e;
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+    background: #e5ece6;
+    color: #718675;
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+    background: #f0e8df;
+    color: #9b7656;
+}
+
+.benefit-card:nth-child(4) .benefit-icon {
+    background: #e9e9dc;
+    color: #788264;
+}
+
+.benefit-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.benefit-card h3 {
+    margin: 9px 0 5px;
+    color: #54371f;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    margin: 0;
+    color: #938675;
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.newsletter-section {
+    padding: 48px 0;
+    background: #f2f0e9;
+    color: #54371f;
+}
+
+.newsletter-inner {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.newsletter-copy h2 {
+    max-width: 520px;
+    font-size: clamp(23px, 2.7vw, 32px);
+}
+
+.newsletter-copy > p:last-child {
+    max-width: 490px;
+    margin: 12px 0 0;
+    color: #938675;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.newsletter-form {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgba(84, 55, 31, 0.06);
+    border-radius: 4px;
+    background: #f9f8f4;
+}
+
+.newsletter-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #684c32;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.newsletter-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.newsletter-controls input {
+    min-width: 0;
+    min-height: 48px;
+    flex: 1;
+    padding: 0 14px;
+    border: 1px solid #ded8cb;
+    border-radius: 5px;
+    background: #fbfaf7;
+    color: #54371f;
+    font: inherit;
+    font-size: 13px;
+}
+
+.newsletter-controls input:focus {
+    border-color: #9a8060;
+    outline: 2px solid rgba(154, 128, 96, 0.18);
+}
+
+.newsletter-controls input[aria-invalid="true"] {
+    border-color: #a65348;
+}
+
+.newsletter-controls button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 5px;
+    background: #59391f;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 180ms ease;
+}
+
+.newsletter-controls button:hover {
+    background: #755033;
+}
+
+.newsletter-feedback {
+    min-height: 18px;
+    margin: 8px 0 0;
+    color: #657f68;
+    font-size: 12px;
+}
+
+.newsletter-feedback.is-error {
+    color: #a65348;
+}
+
+.newsletter-privacy {
+    margin: 0;
+    color: #938675;
+    font-size: 10px;
+}
+
+@media (max-width: 980px) {
+    .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefit-card:nth-child(2) {
+        border-right: 0;
+    }
+
+    .benefit-card:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(84, 55, 31, 0.07);
+    }
+
+    .newsletter-inner {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-section {
+        padding: 42px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 13px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .category-card {
+        min-height: 120px;
+        gap: 7px;
+        padding: 11px 8px;
+    }
+
+    .category-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .category-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .product-grid {
+        gap: 11px;
+    }
+
+    .product-visual {
+        height: 145px;
+    }
+
+    .product-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .product-title-row h3 {
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .product-description {
+        min-height: 28px;
+        margin: 5px 0 8px;
+        font-size: 10px;
+    }
+
+    .product-buy-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .add-to-cart-button {
+        width: 100%;
+    }
+
+    .promotion-inner {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 45px;
+        padding-bottom: 22px;
+    }
+
+    .promotion-copy {
+        padding: 0;
+        text-align: center;
+    }
+
+    .promotion-copy > p:not(.section-eyebrow) {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .promotion-art {
+        min-height: 235px;
+        margin-top: 5px;
+    }
+
+    .promotion-art > svg {
+        max-height: 240px;
+    }
+
+    .promotion-sun {
+        width: 185px;
+    }
+
+    .benefit-grid {
+        gap: 0;
+    }
+
+    .benefit-card {
+        padding: 14px 10px;
+    }
+
+    .benefit-card h3 {
+        font-size: 11px;
+    }
+
+    .benefit-card p {
+        font-size: 10px;
+    }
+
+    .newsletter-section {
+        padding: 48px 0;
+    }
+
+    .newsletter-inner {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
+
+    .newsletter-copy {
+        text-align: center;
+    }
+
+    .newsletter-form {
+        padding: 18px 14px;
+        text-align: left;
+    }
+
+    .newsletter-copy > p:last-child {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .newsletter-controls {
+        text-align: left;
+    }
+
+    .newsletter-controls button {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-visual {
+        height: 200px;
+    }
+
+    .product-title-row {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .product-buy-row {
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .category-card,
+    .category-link span,
+    .home-product-card,
+    .product-art,
+    .add-to-cart-button,
+    .text-link span,
+    .promotion-button,
+    .newsletter-controls button {
+        transition: none;
+    }
+}
+
+
+
+
+.product-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    background: #e7eee8;
+    color: #6c8975;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.product-art {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Categories - Figma Design */
+
+.categories-section {
+    padding: 65px 0;
+}
+
+.category-grid {
+    max-width: 950px;
+    margin: 30px auto 0;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    min-height: auto;
+    padding: 8px;
+    gap: 12px;
+    border: none;
+    background: transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    border: none;
+    box-shadow: none;
+}
+
+.category-icon {
+    width: 58px;
+    height: 58px;
+    border: none;
+    background: #eeece3;
+}
+
+.category-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.category-name {
+    min-height: auto;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+}
+
+.category-link {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+

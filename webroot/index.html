@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5ef">
+    <meta name="description" content="Everyday healthcare essentials, thoughtfully chosen for you and your family.">
+    <title>MediLife | Care for every day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/store.css">
+    <script src="js/store.js" defer></script>
+</head>
+<body>
+    <div class="announcement">
+        <p>Thoughtful care, delivered to your door <span>•</span> Free shipping on orders over $50</p>
+        <a href="#products">Shop now <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="MediLife home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4v24M4 16h24"/><circle cx="16" cy="16" r="13"/></svg></span>
+            <span>medi<span>life</span></span>
+        </a>
+        <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-link active" href="#top">Home</a>
+            <a class="nav-link" href="#categories">Shop</a>
+            <a class="nav-link" href="#care">About</a>
+            <a class="nav-link" href="#journal">Journal</a>
+            <a class="nav-link" href="#footer">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-button search-toggle" type="button" aria-label="Search products">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            </button>
+            <button class="icon-button account-button" type="button" aria-label="Your account">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c.7-3.5 3.2-5.3 7.5-5.3s6.8 1.8 7.5 5.3"/></svg>
+            </button>
+            <button class="cart-button" type="button" aria-label="Shopping cart, 0 items">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.5L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+                <span>Cart <b class="cart-count">0</b></span>
+            </button>
+        </div>
+        <form class="search-panel" role="search">
+            <label class="visually-hidden" for="site-search">Search products</label>
+            <input id="site-search" type="search" placeholder="Search vitamins, skincare, first aid...">
+            <button type="submit" aria-label="Submit search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button>
+        </form>
+    </header>
+
+    <main id="top">
+        <section class="hero page-width">
+            <div class="hero-copy">
+                <p class="eyebrow"><span></span> GOOD HEALTH, MADE A LITTLE EASIER</p>
+                <h1>Your trusted care,<br>now and <em>always.</em></h1>
+                <p class="hero-description">Feel good about what goes into your everyday routine. Find the essentials you need, chosen with care.</p>
+                <div class="hero-actions">
+                    <a class="button button-dark" href="#products">Shop best sellers <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="#categories">Explore categories <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="hero-note"><span class="avatar-stack" aria-hidden="true"><i>J</i><i>A</i><i>M</i></span><span><strong>Loved by 12,000+</strong><br>happy, healthy customers</span></div>
+            </div>
+            <div class="hero-art">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=85" alt="Carefully selected wellness and pharmacy essentials">
+                <div class="hero-sticker"><span class="sticker-cross" aria-hidden="true">✳</span><span>Care that<br>comes naturally</span></div>
+                <div class="hero-caption"><span>Everyday wellness</span><span>01 / 04</span></div>
+            </div>
+            <div class="hero-side-label" aria-hidden="true">A HEALTHIER YOU STARTS HERE</div>
+        </section>
+
+        <section class="benefits page-width" aria-label="Our promises">
+            <article class="benefit-item"><span class="benefit-icon icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.7"/><circle cx="17.5" cy="19" r="1.7"/></svg></span><span><strong>Fast, free delivery</strong><small>On orders over $50</small></span></article>
+            <article class="benefit-item"><span class="benefit-icon icon-yellow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-2.7 8-7 10-4.3-2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span><strong>Trusted quality</strong><small>Carefully vetted products</small></span></article>
+            <article class="benefit-item"><span class="benefit-icon icon-pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2Z"/></svg></span><span><strong>Here for your health</strong><small>Real people, ready to help</small></span></article>
+            <article class="benefit-item"><span class="benefit-icon icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-2v-6h4M4 13h4v6H6a2 2 0 0 1-2-2z"/></svg></span><span><strong>Good advice, always</strong><small>Support from real pharmacists</small></span></article>
+        </section>
+
+        <section class="category-section section-pad" id="categories">
+            <div class="page-width">
+                <div class="section-heading">
+                    <div><p class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</p><h2>Shop by <em>category</em></h2></div>
+                    <a class="text-link" href="#products">View all categories <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="category-grid">
+                    <a class="category-card category-sage" href="#products" data-category-link="Vitamins">
+                        <span class="category-number">01</span><div class="category-art"><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=520&q=80" alt=""></div><span class="category-label"><strong>Vitamins &amp; supplements</strong><span>Explore <b>↗</b></span></span>
+                    </a>
+                    <a class="category-card category-peach" href="#products" data-category-link="Skincare">
+                        <span class="category-number">02</span><div class="category-art"><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=520&q=80" alt=""></div><span class="category-label"><strong>Skincare</strong><span>Explore <b>↗</b></span></span>
+                    </a>
+                    <a class="category-card category-blue" href="#products" data-category-link="Personal care">
+                        <span class="category-number">03</span><div class="category-art"><img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=520&q=80" alt=""></div><span class="category-label"><strong>Personal care</strong><span>Explore <b>↗</b></span></span>
+                    </a>
+                    <a class="category-card category-lilac" href="#products" data-category-link="First aid">
+                        <span class="category-number">04</span><div class="category-art"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=520&q=80" alt=""></div><span class="category-label"><strong>First aid</strong><span>Explore <b>↗</b></span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section section-pad page-width" id="products">
+            <div class="section-heading product-heading">
+                <div><p class="eyebrow">THE EVERYDAY FAVORITES</p><h2>Good things, <em>well chosen.</em></h2></div>
+                <div class="product-controls" role="group" aria-label="Filter products">
+                    <button class="filter-chip selected" type="button" data-filter="All">All</button>
+                    <button class="filter-chip" type="button" data-filter="Vitamins">Vitamins</button>
+                    <button class="filter-chip" type="button" data-filter="Skincare">Skincare</button>
+                    <button class="filter-chip" type="button" data-filter="Personal care">Personal care</button>
+                </div>
+            </div>
+            <div class="product-grid">
+                <article class="product-card" data-category="Vitamins" data-name="daily essentials multivitamin">
+                    <div class="product-image product-image-sage"><span class="product-tag">BESTSELLER</span><button class="favorite-button" type="button" aria-label="Save Daily Essentials Multivitamin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2Z"/></svg></button><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=720&q=85" alt="Daily multivitamin bottle"></div>
+                    <div class="product-info"><div class="product-meta"><span>Vitamins</span><span class="rating">★ 4.9 <small>(128)</small></span></div><h3>Daily Essentials Multivitamin</h3><div class="product-bottom"><strong>$18.00</strong><button class="add-button" type="button" aria-label="Add Daily Essentials Multivitamin to cart">+</button></div></div>
+                </article>
+                <article class="product-card" data-category="Skincare" data-name="calm and restore face cream">
+                    <div class="product-image product-image-peach"><span class="product-tag tag-new">JUST IN</span><button class="favorite-button" type="button" aria-label="Save Calm and Restore Face Cream"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2Z"/></svg></button><img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=720&q=85" alt="Calming skincare cream"></div>
+                    <div class="product-info"><div class="product-meta"><span>Skincare</span><span class="rating">★ 4.8 <small>(86)</small></span></div><h3>Calm &amp; Restore Face Cream</h3><div class="product-bottom"><strong>$24.00</strong><button class="add-button" type="button" aria-label="Add Calm and Restore Face Cream to cart">+</button></div></div>
+                </article>
+                <article class="product-card" data-category="Personal care" data-name="daily hydration tablets">
+                    <div class="product-image product-image-blue"><span class="product-tag">EVERYDAY PICK</span><button class="favorite-button" type="button" aria-label="Save Daily Hydration Tablets"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2Z"/></svg></button><img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=720&q=85" alt="Hydration and personal care product"></div>
+                    <div class="product-info"><div class="product-meta"><span>Personal care</span><span class="rating">★ 4.9 <small>(74)</small></span></div><h3>Daily Hydration Tablets</h3><div class="product-bottom"><strong>$16.50</strong><button class="add-button" type="button" aria-label="Add Daily Hydration Tablets to cart">+</button></div></div>
+                </article>
+                <article class="product-card" data-category="Vitamins" data-name="sleep well magnesium">
+                    <div class="product-image product-image-lilac"><span class="product-tag tag-sale">SAVE 15%</span><button class="favorite-button" type="button" aria-label="Save Sleep Well Magnesium"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 11-8.5 11s-8.5-6-8.5-11a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2Z"/></svg></button><img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=720&q=85" alt="Magnesium wellness supplement"></div>
+                    <div class="product-info"><div class="product-meta"><span>Vitamins</span><span class="rating">★ 4.7 <small>(52)</small></span></div><h3>Sleep Well Magnesium</h3><div class="product-bottom"><strong>$21.00 <del>$25.00</del></strong><button class="add-button" type="button" aria-label="Add Sleep Well Magnesium to cart">+</button></div></div>
+                </article>
+            </div>
+            <p class="no-results" hidden>No products match that search. Try another word.</p>
+            <div class="center-action"><a class="button button-outline" href="#categories">Browse all products <span aria-hidden="true">→</span></a></div>
+        </section>
+
+        <section class="care-feature page-width" id="care">
+            <div class="care-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85" alt="A pharmacist helping a customer choose the right care"></div>
+            <div class="care-copy"><p class="eyebrow">CARE THAT FEELS PERSONAL</p><h2>Small steps.<br><em>Better days.</em></h2><p>Good health isn't one-size-fits-all. We're here to help you find what works for you, with thoughtful products and people who genuinely care.</p><a class="button button-dark" href="#footer">Get to know us <span aria-hidden="true">↗</span></a><span class="care-doodle" aria-hidden="true">✳</span></div>
+        </section>
+
+        <section class="journal-section section-pad" id="journal">
+            <div class="page-width">
+                <div class="section-heading"><div><p class="eyebrow">A HEALTHIER WAY TO LIVE</p><h2>Notes for <em>feeling good.</em></h2></div><a class="text-link" href="#journal">Visit the journal <span aria-hidden="true">→</span></a></div>
+                <div class="journal-grid">
+                    <article class="journal-card journal-featured"><a class="journal-image" href="#newsletter"><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=1000&q=85" alt="Fresh wellness ingredients on a table"><span class="journal-arrow" aria-hidden="true">↗</span></a><div class="journal-meta"><span>WELLNESS</span><span>5 MIN READ</span></div><h3><a href="#newsletter">A gentler start: building a feel-good morning routine</a></h3></article>
+                    <article class="journal-card"><a class="journal-image journal-image-peach" href="#newsletter"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=85" alt="Simple skincare products"><span class="journal-arrow" aria-hidden="true">↗</span></a><div class="journal-meta"><span>SKINCARE</span><span>4 MIN READ</span></div><h3><a href="#newsletter">The everyday essentials your skin will thank you for</a></h3></article>
+                    <article class="journal-card"><a class="journal-image journal-image-blue" href="#newsletter"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85" alt="A quiet moment for rest and wellbeing"><span class="journal-arrow" aria-hidden="true">↗</span></a><div class="journal-meta"><span>MINDFUL LIVING</span><span>6 MIN READ</span></div><h3><a href="#newsletter">Making space for rest in a busy, everyday life</a></h3></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section page-width" id="newsletter">
+            <div class="newsletter-mark" aria-hidden="true">✳</div><div><p class="eyebrow">A LITTLE GOODNESS IN YOUR INBOX</p><h2>Feel-good notes, <em>coming your way.</em></h2><p>Wellness tips, new arrivals, and 10% off your first order.</p></div>
+            <form class="newsletter-form"><label class="visually-hidden" for="email-address">Your email address</label><input id="email-address" type="email" placeholder="Your email address" required><button type="submit" aria-label="Subscribe to newsletter">Join us <span aria-hidden="true">→</span></button></form>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+        <div class="footer-main page-width">
+            <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4v24M4 16h24"/><circle cx="16" cy="16" r="13"/></svg></span><span>medi<span>life</span></span></a><p>Everyday care, thoughtfully chosen.<br>Here for your health, always.</p><div class="social-links"><a href="#footer" aria-label="Instagram">ig</a><a href="#footer" aria-label="Facebook">f</a><a href="#footer" aria-label="Pinterest">p</a></div></div>
+            <div class="footer-column"><h3>Explore</h3><a href="#categories">Shop all</a><a href="#products">Best sellers</a><a href="#care">Our story</a><a href="#journal">Journal</a></div>
+            <div class="footer-column"><h3>Need a hand?</h3><a href="#footer">Contact us</a><a href="#footer">Shipping &amp; returns</a><a href="#footer">FAQs</a><a href="#footer">Talk to a pharmacist</a></div>
+            <div class="footer-contact"><span class="footer-spark" aria-hidden="true">✳</span><p>Here when you need us.</p><a href="mailto:hello@medilife.example">hello@medilife.example</a><small>Mon–Fri, 9am–5pm</small></div>
+        </div>
+        <div class="footer-bottom page-width"><span>© 2025 MediLife. All rights reserved.</span><div><a href="#footer">Privacy</a><a href="#footer">Terms</a></div><span>Made for feeling good <b aria-hidden="true">♥</b></span></div>
+    </footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

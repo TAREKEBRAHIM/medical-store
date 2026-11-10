@@ -1,0 +1,36 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --hero-bg: #e9e7df;
+    --header-bg: #f4f1e9;
+    --text-color: #54371f;
+    --muted-color: #938675;
+    --accent-color: #59391f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #efeee8;
+    color: #54371f;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header-container {
+    background: #efeee8;
+}
+
+ 
