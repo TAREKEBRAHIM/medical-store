@@ -294,3 +294,41 @@
     gap: 10px;
     margin-top: 15px;
 }
+
+
+.add-to-cart-form {
+    margin: 0;
+}
+
+.cart-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    padding: 14px 22px;
+    border-radius: 8px;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: .25s;
+}
+
+.cart-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cart-toast.success {
+    background: #3d7048;
+}
+
+.cart-toast.error {
+    background: #a34c3e;
+}
+
+.add-to-cart-button:disabled {
+    opacity: .6;
+    cursor: wait;
+}

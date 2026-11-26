@@ -23,7 +23,12 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake']) ?>
+    <?= $this->Html->css([
+        'common/normalize.min',
+        'common/milligram.min',
+        'common/fonts',
+        'common/cake',
+    ]) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

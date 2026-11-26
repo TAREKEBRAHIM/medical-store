@@ -10,7 +10,7 @@
                 <h3>Pages</h3>
 
                 <a href="/">Home</a>
-                <a href="/products">Shop</a>
+                <a href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>">Shop</a>
                 <a href="/pages/about">About</a>
                 <a href="/pages/contact">Contact</a>
                 <a href="#">Blog</a>

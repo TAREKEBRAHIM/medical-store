@@ -1,98 +1,142 @@
 <?php
-/**
- * Routes configuration.
- *
- * In this file, you set up routes to your controllers and their actions.
- * Routes are very important mechanism that allows you to freely connect
- * different URLs to chosen controllers and their actions (functions).
- *
- * It's loaded within the context of `Application::routes()` method which
- * receives a `RouteBuilder` instance `$routes` as method argument.
- *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
-/*
- * This file is loaded in the context of the `Application` class.
- * So you can use `$this` to reference the application class instance
- * if required.
- */
 return function (RouteBuilder $routes): void {
-    /*
-     * The default class to use for all routes
-     *
-     * The following route classes are supplied with CakePHP and are appropriate
-     * to set as the default:
-     *
-     * - Route
-     * - InflectedRoute
-     * - DashedRoute
-     *
-     * If no call is made to `Router::defaultRouteClass()`, the class used is
-     * `Route` (`Cake\Routing\Route\Route`)
-     *
-     * Note that `Route` does not do any inflections on URLs which will result in
-     * inconsistently cased URLs when used with `{plugin}`, `{controller}` and
-     * `{action}` markers.
-     */
-   
-   
     $routes->setRouteClass(DashedRoute::class);
 
     $routes->scope('/', function (RouteBuilder $builder): void {
-        /*
-         * Here, we are connecting '/' (base path) to a controller called 'Pages',
-         * its action called 'display', and we pass a param to select the view file
-         * to use (in this case, templates/Pages/home.php)...
-         */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $builder->connect('/', [
+            'controller' => 'Pages',
+            'action' => 'display',
+            'home',
+    
+            ]);
+        $builder->connect('/login', [
+            'controller' => 'Users',
+            'action' => 'login',
+        ]);
+        $builder->connect('/register', [
+            'controller' => 'Users',
+            'action' => 'register',
+        ]);
+        $builder->connect('/users/logout', [
+            'controller' => 'Users',
+            'action' => 'logout',
+        ]);
 
-        /*
-         * ...and connect the rest of 'Pages' controller's URLs.
-         */
-        $builder->connect('/pages/*', 'Pages::display');
+        $builder->connect('/products', [
+            'prefix' => 'Customer',
+            'controller' => 'Products',
+            'action' => 'index',
+        ]);
 
-        /*
-         * Connect catchall routes for all controllers.
-         *
-         * The `fallbacks` method is a shortcut for
-         *
-         * ```
-         * $builder->connect('/{controller}', ['action' => 'index']);
-         * $builder->connect('/{controller}/{action}/*', []);
-         * ```
-         *
-         * It is NOT recommended to use fallback routes after your initial prototyping phase!
-         * See https://book.cakephp.org/5/en/development/routing.html#fallbacks-method for more information
-         */
-        $builder->fallbacks();
+        $builder->connect('/products/add-to-cart/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Products',
+            'action' => 'addToCart',
+        ])->setPass(['id']);
+     
+        $builder->connect('/products/view/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Products',
+            'action' => 'view',
+        ])->setPass(['id']);
+
+        $builder->connect('/cart', [
+            'prefix' => 'Customer',
+            'controller' => 'Cart',
+            'action' => 'index',
+        ]);
+
+        $builder->connect('/cart/update/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Cart',
+            'action' => 'update',
+        ])->setPass(['id']);
+      
+        $builder->connect('/cart/remove/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Cart',
+            'action' => 'remove',
+        ])->setPass(['id']);
+       
+        $builder->connect('/cart/checkout', [
+            'prefix' => 'Customer',
+            'controller' => 'Cart',
+            'action' => 'checkout',
+        ]);
+
+        $builder->connect('/cart/confirmation/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Cart',
+            'action' => 'confirmation',
+        ])->setPass(['id']);
+
+        $builder->connect('/my-orders', [
+            'prefix' => 'Customer',
+            'controller' => 'Orders',
+            'action' => 'index',
+        ]);
+        $builder->connect('/my-orders/{id}', [
+            'prefix' => 'Customer',
+            'controller' => 'Orders',
+            'action' => 'view',
+        ])->setPass(['id']);
+
+        $builder->prefix('Admin', function (RouteBuilder $admin): void {
+            $admin->connect('/products', [
+                'controller' => 'Products',
+                'action' => 'index',
+            ]);
+            $admin->fallbacks(DashedRoute::class);
+        });
+
+        $builder->prefix('Customer', function (RouteBuilder $customer): void {
+            $customer->connect('/products', [
+                'controller' => 'Products',
+                'action' => 'index',
+            ], ['_name' => 'customerProducts']);
+            $customer->connect('/products/add-to-cart/{id}', [
+                'controller' => 'Products',
+                'action' => 'addToCart',
+            ], ['_name' => 'customerAddToCart'])->setPass(['id']);
+            $customer->connect('/products/view/{id}', [
+                'controller' => 'Products',
+                'action' => 'view',
+            ], ['_name' => 'customerProductView'])->setPass(['id']);
+            $customer->connect('/cart', [
+                'controller' => 'Cart',
+                'action' => 'index',
+            ], ['_name' => 'customerCart']);
+            $customer->connect('/cart/update/{id}', [
+                'controller' => 'Cart',
+                'action' => 'update',
+            ], ['_name' => 'customerCartUpdate'])->setPass(['id']);
+            $customer->connect('/cart/remove/{id}', [
+                'controller' => 'Cart',
+                'action' => 'remove',
+            ], ['_name' => 'customerCartRemove'])->setPass(['id']);
+            $customer->connect('/cart/checkout', [
+                'controller' => 'Cart',
+                'action' => 'checkout',
+            ], ['_name' => 'customerCheckout']);
+            $customer->connect('/cart/confirmation/{id}', [
+                'controller' => 'Cart',
+                'action' => 'confirmation',
+            ], ['_name' => 'customerOrderConfirmation'])->setPass(['id']);
+            $customer->connect('/orders', [
+                'controller' => 'Orders',
+                'action' => 'index',
+            ], ['_name' => 'customerOrders']);
+            $customer->connect('/orders/{id}', [
+                'controller' => 'Orders',
+                'action' => 'view',
+            ], ['_name' => 'customerOrderView'])->setPass(['id']);
+            $customer->fallbacks(DashedRoute::class);
+        });
+
+        $builder->fallbacks(DashedRoute::class);
     });
-
-    /*
-     * If you need a different set of middleware or none at all,
-     * open new scope and define routes there.
-     *
-     * ```
-     * $routes->scope('/api', function (RouteBuilder $builder): void {
-     *     // No $builder->applyMiddleware() here.
-     *
-     *     // Parse specified extensions from URLs
-     *     // $builder->setExtensions(['json', 'xml']);
-     *
-     *     // Connect API actions here.
-     * });
-     * ```
-     */
 };

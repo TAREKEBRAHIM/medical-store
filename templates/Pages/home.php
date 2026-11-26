@@ -1,7 +1,7 @@
-<?= $this->Html->css('home') ?>
-<?= $this->Html->css('home-sections') ?>
-<?= $this->Html->script('home', ['defer' => true]) ?>
-<?= $this->Html->script('home-sections', ['defer' => true]) ?>
+<?= $this->Html->css('common/home') ?>
+<?= $this->Html->css('common/home-sections') ?>
+<?= $this->Html->script('common/home', ['defer' => true]) ?>
+<?= $this->Html->script('common/home-sections', ['defer' => true]) ?>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -27,7 +27,7 @@
             with your medication plan.
         </p>
 
-        <a href="/products" class="shop-button">
+        <a href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>" class="shop-button">
             <span aria-hidden="true">♧</span>
             Shop now
         </a>
@@ -72,7 +72,7 @@
 
                 <a
                     class="category-card"
-                    href="/products?category_id=<?= h($category->id) ?>"
+                    href="<?= $this->Url->build(['_name' => 'customerProducts', '?' => ['category_id' => $category->id]]) ?>"
                 >
 
                     <span class="category-icon" aria-hidden="true">
@@ -187,7 +187,7 @@
 
         <div class="section-action">
 
-            <a class="text-link" href="/products">
+            <a class="text-link" href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>">
                 Explore all products <span aria-hidden="true">→</span>
             </a>
 
@@ -216,7 +216,7 @@
                 and enjoy 15% off your first order.
             </p>
 
-            <a class="promotion-button" href="/products">
+            <a class="promotion-button" href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>">
                 Shop the collection <span aria-hidden="true">→</span>
             </a>
 

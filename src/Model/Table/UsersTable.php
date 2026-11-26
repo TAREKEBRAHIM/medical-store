@@ -1,10 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\RulesChecker;
 
 class UsersTable extends Table
 {
@@ -19,6 +21,13 @@ class UsersTable extends Table
 
     public function validationDefault(Validator $validator): Validator
     {
+
+        $validator
+            ->scalar('name')
+            ->requirePresence('name', 'create')
+            ->notEmptyString('name');
+
+
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
@@ -34,5 +43,16 @@ class UsersTable extends Table
             ->notEmptyString('role');
 
         return $validator;
+    }
+
+
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->isUnique(['email']), [
+            'errorField' => 'email',
+            'message' => 'This email is already registered.'
+        ]);
+
+        return $rules;
     }
 }

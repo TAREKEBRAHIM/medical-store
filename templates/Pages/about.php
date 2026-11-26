@@ -1,4 +1,4 @@
-<?= $this->Html->css('content-pages') ?>
+<?= $this->Html->css('common/content-pages') ?>
 
 <section class="about-page">
 
@@ -93,7 +93,7 @@
                 your everyday wellness.
             </p>
 
-            <a href="/products">Explore Products</a>
+            <a href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>">Explore Products</a>
         </div>
 
         <?= $this->Html->image('products/hero-products.png', [

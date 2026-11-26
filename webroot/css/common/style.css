@@ -1,0 +1,123 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --hero-bg: #e9e7df;
+    --header-bg: #f4f1e9;
+    --text-color: #54371f;
+    --muted-color: #938675;
+    --accent-color: #59391f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #efeee8;
+    color: #54371f;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header-container {
+    background: #efeee8;
+}
+
+
+
+/* Floating Flash Notifications */
+.message.success,
+.message.error {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    z-index: 99999;
+
+    width: min(420px, calc(100% - 40px));
+    margin: 0;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    animation: flashSlide 0.35s ease-out;
+}
+
+.message.success {
+    background: #f0f5ec;
+    color: #45613b;
+    border: 1px solid #d5e4cc;
+}
+
+.message.success::before {
+    content: "✓";
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background: #dcebd3;
+    color: #45613b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.message.error {
+    background: #fbefeb;
+    color: #9b4935;
+    border: 1px solid #efd4ca;
+}
+
+.message.error::before {
+    content: "!";
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background: #f3d9d0;
+    color: #9b4935;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+@keyframes flashSlide {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .message.success,
+    .message.error {
+        top: 85px;
+        right: 15px;
+        width: calc(100% - 30px);
+    }
+}
+
+

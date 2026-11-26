@@ -52,11 +52,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         ServerRequestInterface $request
     ): AuthenticationServiceInterface {
 
-        $loginUrl = Router::url([
-            'controller' => 'Users',
-            'action' => 'login',
-            'plugin' => null,
-        ]);
+        $loginUrl = '/login';
 
         $authenticationService = new AuthenticationService([
             'unauthenticatedRedirect' => $loginUrl,
@@ -91,9 +87,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         return $authenticationService;
     }
 
-    public function services(ContainerInterface $container): void
-    {
-    }
+    public function services(ContainerInterface $container): void {}
 
     protected function bootstrapCli(): void
     {

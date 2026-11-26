@@ -13,10 +13,10 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-    <?= $this->Html->css('fonts') ?>
-    <?= $this->Html->css('style') ?>
-    <?= $this->Html->css('footer') ?>
-    <?= $this->Html->css('header') ?>
+    <?= $this->Html->css('common/fonts') ?>
+    <?= $this->Html->css('common/style') ?>
+    <?= $this->Html->css('common/footer') ?>
+    <?= $this->Html->css('common/header') ?>
 
 </head>
 
@@ -31,9 +31,9 @@
         <?= $this->element('header') ?>
     <?php endif; ?>
     <main>
-        <?= $this->fetch('content') ?>
-    </main>
-
+    <?= $this->Flash->render() ?>
+    <?= $this->fetch('content') ?>
+</main>
     <?php if (!$isLoginPage): ?>
         <?= $this->element('footer') ?>
     <?php endif; ?>

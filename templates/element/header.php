@@ -3,19 +3,27 @@ $currentPath = trim($this->request->getPath(), '/');
 
 $isHome = $currentPath === '';
 $isShop = $currentPath === 'products'
-    || str_starts_with($currentPath, 'products/');
+    || str_starts_with($currentPath, 'products/')
+    || $currentPath === 'customer/products'
+    || str_starts_with($currentPath, 'customer/products/')
+    || $currentPath === 'admin/products'
+    || str_starts_with($currentPath, 'admin/products/');
+
 $isAbout = $currentPath === 'pages/about';
 $isContact = $currentPath === 'pages/contact';
+
 $identity = $this->request->getAttribute('identity');
+$isAdmin = $identity && $identity->get('role') === 'admin';
+
+$headerCart = $this->request->getSession()->read('Cart', []);
+$headerCartCount = array_sum($headerCart);
 ?>
 
 <div class="header-container">
-
     <div class="container">
-
         <header class="site-header">
 
-            <a href="/" class="brand">
+            <a href="<?= $this->Url->build('/') ?>" class="brand">
                 <span class="brand-icon">✚</span>
                 <span>Medifit</span>
             </a>
@@ -26,8 +34,7 @@ $identity = $this->request->getAttribute('identity');
                 aria-label="Toggle navigation"
                 aria-expanded="false"
                 aria-controls="main-navigation"
-                type="button"
-            >
+                type="button">
                 ☰
             </button>
 
@@ -35,29 +42,27 @@ $identity = $this->request->getAttribute('identity');
 
                 <a
                     class="<?= $isHome ? 'nav-link active' : 'nav-link' ?>"
-                    href="/"
-                >
+                    href="<?= $this->Url->build('/') ?>">
                     Home
                 </a>
 
                 <a
                     class="<?= $isShop ? 'nav-link active' : 'nav-link' ?>"
-                    href="/products"
-                >
-                    Shop
+                    href="<?= $isAdmin
+                        ? $this->Url->build(['prefix' => 'Admin', 'controller' => 'Products', 'action' => 'index'])
+                        : $this->Url->build(['_name' => 'customerProducts']) ?>">
+                    <?= $isAdmin ? 'Dashboard' : 'Shop' ?>
                 </a>
 
                 <a
                     class="<?= $isAbout ? 'nav-link active' : 'nav-link' ?>"
-                    href="/pages/about"
-                >
+                    href="<?= $this->Url->build('/pages/about') ?>">
                     About
                 </a>
 
                 <a
                     class="<?= $isContact ? 'nav-link active' : 'nav-link' ?>"
-                    href="/pages/contact"
-                >
+                    href="<?= $this->Url->build('/pages/contact') ?>">
                     Contact
                 </a>
 
@@ -65,18 +70,24 @@ $identity = $this->request->getAttribute('identity');
 
             <div class="header-actions">
 
-                <a href="/products" class="icon-button">
+                <a href="<?= $this->Url->build(['_name' => 'customerProducts']) ?>" class="icon-button">
                     Search
                 </a>
 
-                <a href="/cart" class="icon-button">
+                <a href="<?= $this->Url->build(['_name' => 'customerCart']) ?>" class="icon-button cart-icon">
                     Cart
+
+                    <?php if ($headerCartCount > 0): ?>
+                        <span class="cart-badge">
+                            <?= $headerCartCount ?>
+                        </span>
+                    <?php endif; ?>
                 </a>
 
                 <?php if ($identity): ?>
                     <?= $this->Form->postLink(
                         'Logout',
-                        ['controller' => 'Users', 'action' => 'logout'],
+                        '/users/logout',
                         ['class' => 'icon-button']
                     ) ?>
                 <?php endif; ?>
@@ -84,7 +95,5 @@ $identity = $this->request->getAttribute('identity');
             </div>
 
         </header>
-
     </div>
-
 </div>

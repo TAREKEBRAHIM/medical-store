@@ -1,6 +1,6 @@
 <?php $this->assign('title', 'Add Product | Medifit Store'); ?>
 
-<?= $this->Html->css('add-product') ?>
+<?= $this->Html->css('admin/add-product') ?>
 
 <section class="add-product-page">
     <div class="container">
@@ -14,6 +14,11 @@
         <div class="add-product-card">
 
             <?= $this->Form->create($product, [
+                'url' => [
+                    'prefix' => 'Admin',
+                    'controller' => 'Products',
+                    'action' => 'add',
+                ],
                 'class' => 'add-product-form',
                 'type' => 'file'
             ]) ?>
@@ -72,7 +77,11 @@
                     'class' => 'save-product-button'
                 ]) ?>
 
-                <?= $this->Html->link('Cancel', '/products', [
+                <?= $this->Html->link('Cancel', [
+                    'prefix' => 'Admin',
+                    'controller' => 'Products',
+                    'action' => 'index',
+                ], [
                     'class' => 'cancel-product-button'
                 ]) ?>
 

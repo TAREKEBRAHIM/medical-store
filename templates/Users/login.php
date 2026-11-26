@@ -1,6 +1,6 @@
 <?php
 $this->assign('title', 'Login - Medical Store');
-$this->Html->css('login', ['block' => true]);
+$this->Html->css('common/login', ['block' => true]);
 ?>
 
 <div class="login-page">
@@ -49,6 +49,11 @@ $this->Html->css('login', ['block' => true]);
         ]) ?>
 
         <?= $this->Form->end() ?>
+
+
+        <div class="register-link">
+            <p>Don't have an account? <a href="/register">Create Account</a></p>
+        </div>
 
         <div class="login-footer">
             <p>© <?= date('Y') ?> Medical Store. All rights reserved.</p>
